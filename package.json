@@ -1,0 +1,16 @@
+{
+  "name": "iot_tracking_playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "@types/firebase": "^3.2.1",
+    "firebase": "^5.0.4",
+    "firebase-admin": "^5.12.1",
+    "ts-node": "^6.1.0",
+    "typescript": "^2.9.1"
+  }
+}
