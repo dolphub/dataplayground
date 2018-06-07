@@ -1,34 +1,20 @@
 import React, { Component } from 'react'
-import { fireStoreDb } from './Firestore';
-import Paper from '@material-ui/core/Paper';
+
 import { Table, TableHead, TableRow, TableCell, TableBody, Typography } from '@material-ui/core';
 
-export default class GeoPosition extends Component {
+export default class GeoTable extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       geoData: []
     };
   }
 
-  componentWillMount() {
-    fireStoreDb.collection('Things').onSnapshot(this.onSnapshotChange.bind(this));
+  componentWillReceiveProps(nextProps) {
+    this.setState((prevState, props) => ({
+      geoData: nextProps.geoData
+    }));
   }
-
-  onSnapshotChange(snapshot) {
-    this.setState({
-      geoData: snapshot.docs.map(x => {
-        let data = x.data();
-        let [latitude, longitude] = data.point.geometry.coordinates;
-        return {
-          id: x.id,
-          latitude,
-          longitude
-        };
-      })
-    });
-  }
-
 
   render() {
     const geoData = this.state.geoData.map((x, i) => {
@@ -42,14 +28,14 @@ export default class GeoPosition extends Component {
     });
 
     return (
-      <Paper elevation={20}>
+      <div>
         <Typography variant="display1" align="center">
-          Current Position
+          {this.props.title}
         </Typography>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Thing Id</TableCell>
+              <TableCell>Id</TableCell>
               <TableCell>Latitude</TableCell>
               <TableCell>Longitude</TableCell>
             </TableRow>
@@ -58,7 +44,7 @@ export default class GeoPosition extends Component {
             {geoData}
           </TableBody>
         </Table>
-      </Paper>
+      </div>
     )
   }
 }

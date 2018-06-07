@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GeoPosition from './GeoPosition';
+import PositionComponent from './components/PositionComponent';
 import './App.css';
 
 
@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <GeoPosition />
+        <PositionComponent />
       </div>
     );
   }

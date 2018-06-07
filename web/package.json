@@ -5,9 +5,11 @@
   "dependencies": {
     "@material-ui/core": "^1.2.0",
     "firebase": "^5.0.4",
+    "mapbox-gl": "^0.45.0",
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
+    "react-mapbox-gl": "^3.8.0",
     "react-scripts": "1.1.4"
   },
   "scripts": {

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import * as firebase from 'firebase';
 
 var config = {
-    apiKey: "AIzaSyDq2VWDz53Tl5mPTJSE8lZ-dJd2FmUmomo",
-    authDomain: "playground-76c32.firebaseapp.com",
-    databaseURL: "https://playground-76c32.firebaseio.com",
-    projectId: "playground-76c32",
-    storageBucket: "playground-76c32.appspot.com",
-    messagingSenderId: "1037175016032"
+    apiKey: "AIzaSyDK4yD7RaIf5wcLSFMZFmyhKNOTZYKYpi4",
+    authDomain: "data-playground-206500.firebaseapp.com",
+    databaseURL: "https://data-playground-206500.firebaseio.com",
+    projectId: "data-playground-206500",
+    storageBucket: "",
+    messagingSenderId: "249430530843"
 };
 
 firebase.initializeApp(config);
