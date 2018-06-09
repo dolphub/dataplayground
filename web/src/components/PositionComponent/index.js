@@ -20,34 +20,7 @@ export default class PositionComponent extends Component {
 
   onSnapshotChange(snapshot) {
     this.setState({
-      geoData: snapshot.docs.map(x => {
-        let data = x.data();
-        let [latitude, longitude] = data.point.geometry.coordinates;
-        return {
-          id: x.id,
-          latitude,
-          longitude
-        };
-      }),
-      // Build a valid geojson object to render
-      rawGeoJson: {
-        type: "FeaturesCollection",
-        features: snapshot.docs.map(x => {
-          let data = x.data();
-
-          return {
-            type: "Feature",
-            properties: {
-              "name": x.id,
-              "marker-symbol": "car-15"
-            },
-            geometry: {
-              type: "Point",
-              coordinates: data.point.geometry.coordinates
-            }
-          }
-        })
-      }
+      geoData: snapshot.docs.map(x => x.data())
     });
   }
 

@@ -11,10 +11,9 @@ const collection = db.collection('Things');
 
 
 (async () => {
-    const numberOfThings = 20;
+    const numberOfThings = 25;
     
     const things: Thing[] = Array.from(Array(numberOfThings)).map((v, i) => new Thing(i, collection));
     things.forEach(x => x.start());
     console.log(`Started simulation of ${numberOfThings} things`);
 })();
-

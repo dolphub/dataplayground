@@ -17,12 +17,14 @@ export default class GeoTable extends Component {
   }
 
   render() {
-    const geoData = this.state.geoData.map((x, i) => {
+    const geoData = this.state.geoData.map(x => {
+      const [ lat, long ] = x.geometry.coordinates;
       return (
-        <TableRow hover key={x.id}>
-          <TableCell>{x.id}</TableCell>
-          <TableCell numeric>{x.latitude}</TableCell>
-          <TableCell numeric>{x.longitude}</TableCell>
+        <TableRow hover key={x.properties.id}>
+          <TableCell>{x.properties.id}</TableCell>
+          <TableCell>{x.properties.name}</TableCell>
+          <TableCell >{lat}</TableCell>
+          <TableCell>{long}</TableCell>
         </TableRow>
       );
     });
@@ -36,6 +38,7 @@ export default class GeoTable extends Component {
           <TableHead>
             <TableRow>
               <TableCell>Id</TableCell>
+              <TableCell>Name</TableCell>
               <TableCell>Latitude</TableCell>
               <TableCell>Longitude</TableCell>
             </TableRow>

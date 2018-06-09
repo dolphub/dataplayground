@@ -5,10 +5,12 @@
   "dependencies": {
     "@material-ui/core": "^1.2.0",
     "firebase": "^5.0.4",
+    "immutable": "^3.8.2",
     "mapbox-gl": "^0.45.0",
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
+    "react-map-gl": "^3.2.8",
     "react-mapbox-gl": "^3.8.0",
     "react-scripts": "1.1.4"
   },
@@ -17,5 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@types/mapbox-gl": "^0.45.0"
   }
 }
