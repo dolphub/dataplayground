@@ -12,6 +12,7 @@
     "react-dom": "^16.4.0",
     "react-map-gl": "^3.2.8",
     "react-mapbox-gl": "^3.8.0",
+    "react-mapbox-gl-cluster": "^0.1.10",
     "react-scripts": "1.1.4"
   },
   "scripts": {

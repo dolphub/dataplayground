@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 
 import GeoTable from './GeoTable'
 import GeoMap from './GeoMap'
+import ClusterGeoMap from './ClusterGeoMap';
 
 export default class PositionComponent extends Component {
   constructor(props) {
@@ -28,8 +29,11 @@ export default class PositionComponent extends Component {
   render() {
     return (
       <div>
+        <Paper elevation={20}>
+          <ClusterGeoMap title="Cluster Positions" geoData={this.state.geoData} />
+        </Paper>
         <Paper elevation={20} >
-          <GeoMap title="Current Position" geoData={this.state.geoData} />
+          <GeoMap title="Current Positions" geoData={this.state.geoData} />
         </Paper>
         <Paper elevation={20}>
           <GeoTable title="Geo Positions" geoData={this.state.geoData} />
