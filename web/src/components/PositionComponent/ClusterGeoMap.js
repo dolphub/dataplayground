@@ -108,7 +108,7 @@ export default class ClusterGeoMap extends Component {
                         width: "auto"
                     }}
                 >
-                    <ReactMapboxGlCluster data={this.state.geoData} {...this.getEventHandlers()} />
+                    <ReactMapboxGlCluster data={this.state.geoData} {...this.getEventHandlers()}  />
                 </Map>
             </div>
         )
