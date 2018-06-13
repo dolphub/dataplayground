@@ -1,5 +1,5 @@
 import { Model } from 'mongoose';
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { IGeoData } from './geodata.schema';
 import { Feature, Polygon } from 'geojson';
@@ -17,9 +17,11 @@ export class GeodataService {
         return await this.geoDataModel.find().exec();
     }
 
-    async findStaticDataInBox() {
-        const bbId = '5b1f307e75cc05423c920f38';
-        const box = await this.geoDataModel.findById(bbId).exec();
+    async findStaticDataInBox(id) {
+        const box = await this.geoDataModel.findById(id).exec();
+        if (box.geometry.type !== 'Polygon') {
+            throw new BadRequestException(`Invalid GeoJSON ${box.geometry.type}. Expected a Polygon`);
+        }
 
         // return box;
         const query = {
